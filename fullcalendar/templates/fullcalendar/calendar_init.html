@@ -1,6 +1,9 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        // page is now ready, initialize the calendar...
-        $('#calendar').fullCalendar({{ calendar_config_options }});
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('{{ calendar_id }}');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      {{ calendar_config_options }}
     });
+    calendar.render();
+  });
 </script>
